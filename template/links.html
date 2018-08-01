@@ -1,0 +1,43 @@
+<div>
+    <md-content class="cardcontent"
+                ng-hide="loading"
+                layout-xs="column"
+                layout="row"
+                layout-wrap
+                flex>
+        <div ng-repeat="note in listnotes | filter:{ active : 1 }"
+             layout-padding
+             flex-xs="100"
+             flex-gt-md='33'
+             flex-gt-xs='50'
+             layout="column"
+             layout-align='top center'>
+
+            <md-card
+                    ng-class="
+                {
+                'whitecss': note.color == 1,
+                'lightpink': note.color == 2,
+                'palegreen': note.color == 3,
+                'darkgray': note.color == 4
+                }">
+
+                <md-card-actions layout-xs="column" layout="row" layout-align="start center">
+
+                    <div ng-href="{{note.textnote}}" target="_blank">{{note.textnote}}</div>
+
+                    <md-card-icon-actions>
+                        <md-button ng-href="{{note.textnote}}" target="_blank" class="md-icon-button" aria-label="icon">
+                            <span class="icon icon-new-tab"></span>
+                        </md-button>
+                    </md-card-icon-actions>
+                </md-card-actions>
+                <div>
+                    <notes-content></notes-content>
+                </div>
+
+            </md-card>
+
+        </div>
+    </md-content>
+</div>

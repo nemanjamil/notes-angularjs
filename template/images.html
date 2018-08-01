@@ -1,0 +1,37 @@
+<div>
+    <md-content class="cardcontent"
+                ng-hide="loading"
+                layout-xs="column"
+                layout="row"
+                layout-wrap
+                flex>
+        <div ng-repeat="note in listnotes | filter:{ active : 1 }"
+             layout-padding
+             flex-xs="100"
+             flex-gt-md='33'
+             flex-gt-xs='50'
+             layout="column"
+             layout-align='top center'>
+
+            <md-card
+                    ng-class="
+                {
+                'whitecss': note.color == 1,
+                'lightpink': note.color == 2,
+                'palegreen': note.color == 3,
+                'darkgray': note.color == 4
+                }"
+                    class="relativeclass"
+                    >
+
+                <img ng-src="{{note.textnote}}" class="md-card-image grid-img" class="" data-actual-width="300"
+                     data-actual-height="200" alt="Picture">
+
+                <div class="positionofactionbutton">
+                    <notes-content></notes-content>
+                </div>
+            </md-card>
+
+        </div>
+    </md-content>
+</div>

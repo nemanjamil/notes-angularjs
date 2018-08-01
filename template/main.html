@@ -1,0 +1,90 @@
+<div>
+    <md-content class="cardcontent"
+                ng-hide="loading"
+                layout-xs="column"
+                layout="row"
+                layout-wrap
+                flex>
+        <div ng-repeat="note in listnotes | filter:{ active : 1 }"
+             ng-switch on="note.typenote"
+             layout-padding
+             flex-xs="100"
+             flex-gt-md='33'
+             flex-gt-xs='50'
+             layout="column"
+             layout-align='top center'>
+
+            <md-card
+                    ng-class="
+                {
+                'whitecss': note.color == 1,
+                'lightpink': note.color == 2,
+                'palegreen': note.color == 3,
+                'darkgray': note.color == 4
+                }"
+                    ng-switch-when="2"
+                    class="relativeclass"
+                    >
+
+                <img ng-src="{{note.textnote}}" class="md-card-image grid-img" class="" data-actual-width="300"
+                     data-actual-height="200" alt="Picture">
+
+
+                <div class="positionofactionbutton">
+                    <notes-content></notes-content>
+                </div>
+            </md-card>
+
+            <md-card
+                    ng-class="
+                {
+                'whitecss': note.color == 1,
+                'lightpink': note.color == 2,
+                'palegreen': note.color == 3,
+                'darkgray': note.color == 4
+                }"
+                    ng-switch-when="3">
+
+                <md-card-actions layout-xs="column" layout="row" layout-align="start center">
+                    <div ng-href="{{note.textnote}}" target="_blank">{{note.textnote}}</div>
+                    <md-card-icon-actions>
+                        <md-button ng-href="{{note.textnote}}" target="_blank" class="md-icon-button" aria-label="icon">
+                            <span class="icon icon-new-tab"></span>
+                        </md-button>
+                    </md-card-icon-actions>
+                </md-card-actions>
+                <div>
+                    <notes-content></notes-content>
+                </div>
+
+            </md-card>
+
+            <md-card
+                    ng-class="
+                {
+
+                'whitecss': note.color == 1,
+                'lightpink': note.color == 2,
+                'palegreen': note.color == 3,
+                'darkgray': note.color == 4
+                }"
+                    ng-switch-default
+                    ng-mouseenter="showelement($event)"
+                    ng-mouseleave="hideelement($event)">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">{{note.title}}</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <p>{{note.textnote}}</p>
+                    <p>Belongs to user_id : {{note.user_id}}</p>
+                </md-card-content>
+
+                <notes-content></notes-content>
+
+            </md-card>
+
+        </div>
+    </md-content>
+</div>

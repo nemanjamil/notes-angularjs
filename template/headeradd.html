@@ -1,0 +1,13 @@
+<section class="addbuttonheader" layout="row" layout-xs="column" layout-align="end center" layout-wrap>
+    <div layout="row" layout-align="start center" flex>
+        <div></div>
+        <h1 class="fs30">{{$route.current.titlecontroller}}</h1>
+        <span flex></span>
+    </div>
+    <div ng-if="$route.current.controller == 'trash'">
+        <md-button class="butborradred md-raised" ng-click="allTrash()">Trash</md-button>
+    </div>
+    <div ng-if="$route.current.controller != 'trash'">
+        <md-button class="md-raised butborrad" ng-click="showAdvanced($event)">Add New Note</md-button>
+    </div>
+</section>

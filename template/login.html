@@ -1,0 +1,47 @@
+<div class="md-padding">
+
+    <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Login Page</span>
+            </md-card-title-text>
+        </md-card-title>
+
+
+        <form ng-if="!loggeduser" name="formlogin" ng-submit="login()" role="form">
+
+
+            <md-content style="padding: 20px">
+                <md-input-container class="md-icon-float md-block">
+                    <label>Name</label>
+                    <input ng-model="user.name" type="text">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input ng-model="user.email" type="email" placeholder="Email (required)" ng-required="true">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Pass</label>
+                    <input ng-model="user.pass" type="password" placeholder="Password (required)" ng-required="true">
+                </md-input-container>
+
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button type="submit" class="md-raised" md-colors="{color: 'default-yellow-A100', 'background': 'default-orange-A700'}">Log in</md-button>
+                </md-card-actions>
+
+            </md-content>
+
+        </form>
+
+        <md-card-content ng-if="loggeduser">
+            <p>You are allready logged!!!</p>
+        </md-card-content>
+
+    </md-card>
+
+
+
+</div>
+

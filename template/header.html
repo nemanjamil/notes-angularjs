@@ -1,0 +1,66 @@
+<nav class="clearfix">
+    <input type="checkbox" id="nav" ng-model="cekiraj" class="hidden">
+    <label for="nav" class="nav-btn">
+        <i></i>
+        <i></i>
+        <i></i>
+    </label>
+    <div class="logo">
+        <img src="/src/images/illustrations/note-tracker-logo.svg" alt="Kiwi standing on oval">
+    </div>
+    <div class="nav-wrapper notes">
+
+        <div class="links">
+            <ul class="fs2 borderbotom">
+
+                <li class="active">
+                    <span class="icon icon-all-notes"></span>
+                    <span class="mls"><a href="/">All notes</a></span>
+                </li>
+
+                <li ng-class="{active: $route.current.controller == 'notes'}">
+                    <span class="icon icon-notes"></span>
+                    <span class="mls"><a href="/notes">Notes</a></span>
+                </li>
+
+                <li ng-class="{active: $route.current.controller == 'images'}">
+                    <span class="icon icon-images"></span>
+                    <span class="mls"> <a href="/images">Images </a></span>
+                </li>
+
+                <li ng-class="{active: $route.current.controller == 'links'}">
+                    <span class="icon icon-link"></span>
+                    <span class="mls"><a href="/links"> Links </a></span>
+                </li>
+
+
+            </ul>
+
+            <ul class="fs2 borderbotom">
+                <li class="trash" ng-class="{active: $route.current.controller == 'trash'}">
+                    <span class="icon icon-trash"></span>
+                    <span class="mls"><a href="/trash"> Trash</a></span>
+                </li>
+
+
+
+                <li ng-if="!loggeduser"   ng-class="{active: $route.current.controller == 'login'}">
+                    <span class="icon  icon-new-tab"></span>
+                    <span class="mls"><a ng-href="/login"> Login</a></span>
+                </li>
+
+                <li ng-if="loggeduser" ng-class="{active: $route.current.controller == 'login'}">
+                    <span class="icon  icon-new-tab"></span>
+                    <span class="mls"><a href ng-click="logout()"> LogOut</a></span>
+                </li>
+            </ul>
+        </div>
+        <!--<div>
+            <ul>
+                <li><a ng-href="/" ng-click="updateCheckbox()">Home</a></li>
+                <li><a ng-href="/login" ng-click="updateCheckbox()">Login</a></li>
+                <li><a ng-href="/notes" ng-click="updateCheckbox()">Notes</a></li>
+            </ul>
+        </div>-->
+    </div>
+</nav>
