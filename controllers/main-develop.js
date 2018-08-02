@@ -23,7 +23,7 @@
             })
             .accentPalette('purple', {
                 'default': '200'
-            })
+            });
             //.warnPalette('red')
             //.backgroundPalette('blue-grey');
             //.backgroundPalette('yellow');
