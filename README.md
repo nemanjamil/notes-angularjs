@@ -6,9 +6,7 @@ Notes list. Developed in AngularJS
 
 For back-end use  PHP. 
 
-For front-end use AngularJS or React.
-
-Using the framework, packaging / build tools is desirable.
+For front-end use AngularJS
 
 ## RESULT
 
